@@ -9,7 +9,7 @@ class UserProfileManager(BaseUserManager):
     def create_user(self, email, name, password=None):
         #create a new user profile
 
-        if not emailL:
+        if not email:
             raise ValueError('User must have an email')
         email = self.normalize_email(email)
         user = self.model(email=email, name=name)
